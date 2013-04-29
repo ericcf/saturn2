@@ -1,0 +1,30 @@
+<% content_for(:page_title) { "Dashboard" } %>
+
+<% content_for :title do %>
+  Dashboard
+<% end %>
+
+<% if !@admin_schedules.blank? && !@member_schedules.blank? %>
+  <div class="tabbable">
+    <ul class="nav nav-tabs">
+      <li class="active"><a href="#admin-tab" data-toggle="tab">Admin</a></li>
+      <li><a href="#personal-tab" data-toggle="tab">Personal</a></li>
+    </ul>
+
+    <div class="tab-content">
+      <div class="tab-pane active" id="admin-tab">
+        <%= render 'admin_dashboard' %>
+      </div>
+
+      <div class="tab-pane" id="personal-tab">
+        <%= render 'personal_dashboard' %>
+      </div>
+    </div>
+  </div>
+<% elsif @member_schedules.blank? && !@admin_schedules.blank? %>
+  <%= render 'admin_dashboard' %>
+<% elsif @admin_schedules.blank? && !@member_schedules.blank? %>
+  <%= render 'personal_dashboard' %>
+<% else %>
+  <p>Please select a schedule from the "Schedules" menu or a physician from "Physicians" above.</p>
+<% end %>

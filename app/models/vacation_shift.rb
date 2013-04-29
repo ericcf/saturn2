@@ -1,0 +1,2 @@
+class VacationShift < Shift
+end

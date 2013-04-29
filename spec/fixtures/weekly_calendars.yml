@@ -1,0 +1,9 @@
+unpublished:
+  schedule:     general
+  date:         2012-09-10
+  is_published: false
+
+published:
+  schedule:     general
+  date:         2012-09-17
+  is_published: true

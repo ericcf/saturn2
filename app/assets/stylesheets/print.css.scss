@@ -1,0 +1,170 @@
+* {
+  position: static !important;
+}
+
+body {
+  background: white;
+  font-size: 11pt;
+}
+
+.hide-from-print {
+  display: none;
+}
+
+.print-no-padding {
+  padding: 0 !important;
+}
+
+#header { display: none; }
+
+#print-notes {
+  display: block;
+  width: 70%;
+  margin-top: 10pt;
+  
+  .date {
+    width: 3%;
+  }
+  
+  td:last-child {
+    border-right: none;
+  }
+
+  tr:last-child td {
+    border-bottom: none;
+  }
+}
+
+.schedule-header {
+  margin-top: 10pt;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+
+  td, th {
+    font-size: 9pt;
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+    text-align: left;
+    vertical-align: top;
+
+    img {
+      display: none;
+    }
+  }
+}
+
+.schedule table {
+  td, th {
+    width: 12%;
+  }
+}
+
+fieldset.buttons {
+  display: none;
+}
+
+form, .inline_form, .content_actions {
+  display: none;
+}
+
+.navbar, .subnav {
+  display: none;
+}
+
+.navcontainer {
+  display: none;
+}
+
+#alert {
+  display: none;
+}
+
+#main {
+  width: auto;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  float: none !important;
+  color: black;
+  background: transparent;
+}
+
+.note {
+  color: #cccccc;
+  font-size: 8pt;
+}
+
+// schedules
+.schedule .individual-schedule .assignment {
+  a {
+    display: inline;
+    color: black;
+    text-decoration: none;
+  }
+
+  .details {
+    display: none;
+  }
+}
+
+.schedule {
+  .controls {
+    a, input, img, .button {
+      display: none;
+    }
+  }
+
+  #schedule-header {
+    th {
+      width: 11%;
+      vertical-align: bottom;
+
+      &:first-child {
+        width: 23%;
+      }
+
+      & .events {
+        font-weight: normal;
+      }
+    }
+  }
+
+  .annotations {
+    display: none;
+  }
+
+  .individual-schedule {
+    page-break-inside: avoid;
+
+    * {
+      page-break-after: avoid;
+      page-break-before: avoid;
+    }
+
+    th {
+      width: 23%;
+    }
+  }
+
+  .timespan {
+    vertical-align: top;
+    width: 11%;
+  }
+}
+
+#schedule-conflicts {
+  margin-top: 10pt;
+
+  table {
+    width: 150px;
+    border-top: 1px solid black;
+    border-left: 1px solid black;
+
+    .summaries {
+      display: table-row-group !important;
+    }
+  }
+}

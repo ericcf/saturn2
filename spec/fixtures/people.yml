@@ -1,0 +1,32 @@
+attending_mary:
+  given_name:  Mary
+  family_name: Yang
+  type:        FacultyMember
+
+attending_mark:
+  given_name:  Mark
+  family_name: Flenderson
+  type:        FacultyMember
+
+attending_julia:
+  given_name:  Julia
+  family_name: Serrano
+  type:        FacultyMember
+
+fellow_dietrich:
+  given_name:  Dietrich
+  family_name: Harpo
+  type:        Fellow
+
+resident_pat:
+  given_name:  Pat
+  family_name: Goldsmith
+  type:        Resident
+  employment_starts_on: 1999-06-20
+
+resident_isabel:
+  given_name:  Isabel
+  family_name: Kohler
+  type:        Resident
+  employment_starts_on: 2010-06-20
+  employment_ends_on:   2014-06-20

@@ -29,10 +29,11 @@ group :development, :test do
   gem 'debugger'
   gem 'mail_view'
   gem 'rspec-rails'
+  gem 'capybara'
 end
 
 group :test do
-  gem 'jasmine'
+  #gem 'jasmine'
   #gem 'database_cleaner'
   #gem 'capybara-webkit'
   #gem 'capybara'

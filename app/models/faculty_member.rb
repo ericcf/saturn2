@@ -1,0 +1,2 @@
+class FacultyMember < Person
+end

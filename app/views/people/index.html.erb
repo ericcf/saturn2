@@ -1,0 +1,49 @@
+<% content_for :title do %>
+  People
+<% end %>
+
+<div class="page-header">
+  <span class="form-search">
+    <div class="input-append">
+      <input type="text" class="span2 search-query" data-search="table" data-target="#people-table" data-column="name" placeholder="Search names...">
+      <button type="submit" class="btn">Clear</button>
+    </div>
+  </span>
+</div>
+
+<div class="row">
+  <div class="span10">
+    <table class="table table-condensed" id="people-table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Training</th>
+          <th>Schedules</th>
+          <th>Starts</th>
+          <th>Ends</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% today = Date.today %>
+        <% @people.each do |person| %>
+          <% starts_on = person.employment_starts_on %>
+          <% starts_in_future = (!starts_on.nil? && starts_on > today) %>
+          <% ends_on = person.employment_ends_on %>
+          <% ends_in_past = (!ends_on.nil? && ends_on < today) %>
+          <tr class="<%= "error" if starts_in_future || ends_in_past %>" id="person-<%= person.id %>">
+            <td class="name"><%= link_to person.full_name, person_schedule_path(person) %></td>
+            <td><%= person.type.underscore.humanize %></td>
+            <td>
+              <% @memberships[person.id].each do |s| %>
+                <%= s %><br />
+              <% end %>
+            </td>
+            <td class="<%= starts_in_future ? "warning" : "" %>"><%= starts_on %></td>
+            <td class="<%= ends_in_past ? "warning" : "" %>"><%= ends_on %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

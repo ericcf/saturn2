@@ -1,0 +1,14 @@
+<head>
+  <title>
+    <%= "Saturn - #{content_for?(:page_title) ? yield(:page_title) : "Scheduling"}" %>
+  </title>
+
+  <%= csrf_meta_tag %>
+  <%= stylesheet_link_tag "application" %>
+  <%= stylesheet_link_tag "print", media: :print %>
+  <%= yield :stylesheets %>
+  <%= javascript_include_tag "application" %>
+  <%= yield :javascripts %>
+  <%= favicon_link_tag "favicon.png" %>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"></meta>
+</head>

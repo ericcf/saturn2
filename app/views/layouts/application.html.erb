@@ -1,14 +1,31 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Saturn2</title>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+  <%= render 'shared/head' %>
 
-<%= yield %>
+  <body>
+    <%= render 'shared/navbar' %>
 
-</body>
+    <div class="container-fluid">
+      <div class="row-fluid">
+        <div class="span1 placeholder"></div>
+        <%= yield :submenu %>
+      </div>
+      <div class="row-fluid">
+        <div class="span5"><%= yield :left_of_alert %></div>
+        <div id="alert" class="span7">
+          <% if flash.empty? %>
+            <div class="alert placeholder">&nbsp;</div>
+          <% else %>
+            <% flash.each do |key, value| %>
+              <div class="alert <%= "alert-#{key}" %>"><%= value %></div>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+
+      <%= yield %>
+    </div>
+
+    <%= render 'shared/google_analytics' %>
+  </body>
 </html>

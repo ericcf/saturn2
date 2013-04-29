@@ -1,0 +1,8 @@
+active:
+  schedule:   general
+  shift:      vacation
+
+retired:
+  schedule:   general
+  shift:      default
+  retired_on: <%= Date.yesterday %>

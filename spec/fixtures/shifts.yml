@@ -1,0 +1,26 @@
+default:
+  title:            Default
+  starts_at:        "07:00"
+  ends_at:          "12:00"
+  duration:         0.5
+
+vacation:
+  title:            Vacation
+  starts_at:        "07:00"
+  ends_at:          "12:00"
+  duration:         0.5
+  type:             VacationShift
+
+shown_unpublished:
+  title:            Show unpublished
+  starts_at:        "07:00"
+  ends_at:          "12:00"
+  duration:         0.5
+  show_unpublished: true
+
+not_shown_unpublished:
+  title:            "Don't show unpublished"
+  starts_at:        "07:00"
+  ends_at:          "12:00"
+  duration:         0.5
+  show_unpublished: false

@@ -1,0 +1,4 @@
+default:
+  schedule:    general
+  family_name: Henry
+  given_name:  Hilda

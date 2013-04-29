@@ -1,0 +1,16 @@
+default:
+  start_date:   1902-01-01
+  end_date:     1903-12-31
+
+published:
+  start_date:   2012-06-18
+  end_date:     2013-06-23
+  is_published: true
+
+unpublished:
+  start_date:   2013-06-24
+  end_date:     2014-06-20
+
+unpublished_2:
+  start_date:   2014-06-21
+  end_date:     2015-06-20

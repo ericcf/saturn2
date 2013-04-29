@@ -1,0 +1,10 @@
+default:
+  username:        default
+  password_digest: secret
+  email:           default@example.org
+
+site_admin:
+  username:        admin
+  password_digest: secret
+  email:           admin@example.com
+  admin:           true

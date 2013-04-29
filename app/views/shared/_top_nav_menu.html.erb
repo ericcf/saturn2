@@ -1,0 +1,22 @@
+<% unless APP_CONFIG['menu_items'].blank? %>
+  <% APP_CONFIG['menu_items'].each do |title, link| %>
+    <li><%= link_to title, link %></li>
+  <% end %>
+  <li class="divider-vertical">
+<% end %>
+<li class="dropdown">
+  <%= link_to "Schedules<b class='caret'></b>".html_safe, "#", class: "dropdown-toggle", :"data-toggle" => "dropdown" %>
+  <ul class="dropdown-menu">
+    <% Schedule.order(:title).each do |schedule| %>
+      <li><%= link_to schedule.title, schedule_weekly_calendars_path(schedule) %></li>
+    <% end %>
+    <li><%= link_to "Resident rotations", rotation_schedule_path %></li>
+    <li class="divider"></li>
+    <li><%= link_to "Conferences / Rooms", conference_schedule_path %></li>
+    <li class="divider"></li>
+    <li><%= link_to "Front desk", front_desk_lunches_path %></li>
+  </ul>
+</li>
+<li><%= link_to "People", people_path %></li>
+<li class="divider-vertical">
+<li><%= link_to "Help", "/help_docs/", target: "_blank" %></li>

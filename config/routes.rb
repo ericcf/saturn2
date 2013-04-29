@@ -1,49 +1,27 @@
 Saturn2::Application.routes.draw do
-  # The priority is based upon order of creation: first created -> highest priority.
-  # See how all your routes lay out with "rake routes".
+  if Rails.env.development?
+    get 'impersonate/:user_id', to: 'test_impersonate#impersonate'
+  end
 
-  # You can have the root of your site routed with "root"
-  # root to: 'welcome#index'
+  get 'directory', to: 'directory#show'
+  resources :people
+  resources :nmff_physicians
 
-  # Example of regular route:
-  #   get 'products/:id' => 'catalog#view'
+  resources :holidays
 
-  # Example of named route that can be invoked with purchase_url(id: product.id)
-  #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
+  resources :admin_messages
+  resources :calendar_audits
 
-  # Example resource route (maps HTTP verbs to controller actions automatically):
-  #   resources :products
+  resource :profile
+  put 'user_roles/:user_id', to: 'user_roles#update', as: :update_user_role
 
-  # Example resource route with options:
-  #   resources :products do
-  #     member do
-  #       get 'short'
-  #       post 'toggle'
-  #     end
-  #
-  #     collection do
-  #       get 'sold'
-  #     end
-  #   end
+  resources :person_schedules
+  resource :rotation_schedule
+  resource :conference_schedule
+  resource :front_desk_lunches
+  resources :schedules do
+    resources :weekly_calendars
+  end
 
-  # Example resource route with sub-resources:
-  #   resources :products do
-  #     resources :comments, :sales
-  #     resource :seller
-  #   end
-
-  # Example resource route with more complex sub-resources:
-  #   resources :products do
-  #     resources :comments
-  #     resources :sales do
-  #       get 'recent', on: :collection
-  #     end
-  #   end
-
-  # Example resource route within a namespace:
-  #   namespace :admin do
-  #     # Directs /admin/products/* to Admin::ProductsController
-  #     # (app/controllers/admin/products_controller.rb)
-  #     resources :products
-  #   end
+  root to: 'dashboards#show'
 end

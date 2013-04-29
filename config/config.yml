@@ -1,0 +1,21 @@
+defaults: &defaults
+  from_email: me@example.com
+  # allotted vacation hours per quarter indexed by years of service
+  vacation_hours_per_q:
+    40: [0, 10]
+    50: [10, 25]
+    60: [25, 100]
+  rotation_schedule_start_date: { month: 6, day: 20 }
+  rotation_schedule_admins: []
+  db_backup_path: /tmp
+  ics_timezone: America/Chicago
+
+development:
+  <<: *defaults
+  front_desk_schedule_admins: []
+
+test:
+  <<: *defaults
+
+production:
+  <<: *defaults

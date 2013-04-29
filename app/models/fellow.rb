@@ -1,0 +1,2 @@
+class Fellow < Person
+end

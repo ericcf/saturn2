@@ -1,0 +1,29 @@
+requested:
+  schedule:   general
+  requester:  bob
+  person:     attending_mary
+  shift:      vacation
+  start_date: <%= Date.today %>
+  end_date:   <%= Date.today %>
+  events:     [{}]
+  status:     'requested'
+
+denied:
+  schedule:   general
+  requester:  bob
+  person:     attending_mary
+  shift:      vacation
+  start_date: <%= Date.tomorrow %>
+  end_date:   <%= Date.tomorrow %>
+  events:     [{}]
+  status:     'denied'
+
+cancelled:
+  schedule:   general
+  requester:  bob
+  person   :  attending_mary
+  shift:      vacation
+  start_date: <%= Date.today + 2 %>
+  end_date:   <%= Date.today + 2 %>
+  events:     [{}]
+  status:     'cancelled'
